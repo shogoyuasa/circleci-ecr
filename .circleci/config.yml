@@ -15,7 +15,6 @@ jobs:
       - run: docker build -t ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME}:latest .
       - run: docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME}:latest
 
-# Workflows
 workflows:
   version: 2
   ecr_push:
