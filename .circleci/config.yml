@@ -11,8 +11,6 @@ jobs:
       - checkout
       # Docker in Docker
       - setup_remote_docker
-      - run: npm install
-      - run: npm run build
       - run: sudo pip install awscli
       - run: $(aws ecr get-login --region ap-northeast-1 --no-include-email)
       - run: docker build -t ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME}:latest .
